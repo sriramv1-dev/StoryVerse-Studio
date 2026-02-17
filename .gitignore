@@ -34,3 +34,14 @@ build/
 
 # Secrets (DO NOT COMMIT YOUR API KEYS)
 src/main/resources/application.properties
+
+# Backend ignores
+backend/target/
+backend/.idea/
+backend/*.iml
+backend/src/main/resources/application.properties
+
+# Frontend ignores (Pre-setup for your React app)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
