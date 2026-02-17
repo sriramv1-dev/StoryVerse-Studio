@@ -1,0 +1,17 @@
+spring.application.name=storyverse
+
+# -----------------------------------------------------------------
+# CRITICAL FIX: Use "genai" instead of "gemini" in the property names
+# -----------------------------------------------------------------
+# 1. Your API Key (The string starting with AIza...)
+spring.ai.google.genai.api-key=ADD_YOUR_API_KEY
+
+# 2. Project ID (Required by this library)
+# Since you are using a simple API key, you can often use a placeholder name like this:
+spring.ai.google.genai.project-id=storyverse-studio
+
+# 3. Location (Required by this library)
+# spring.ai.google.genai.location=us-central1
+
+# 4. CRITICAL FIX: Force the model to the stable version
+spring.ai.google.genai.chat.options.model=gemini-2.0-flash-lite
