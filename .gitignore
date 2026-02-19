@@ -13,6 +13,14 @@ target/
 .springBeans
 .sts4-cache
 
+# --- Global System Files (Ignore everywhere) ---
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# --- IntelliJ/IDE Files (Ignore everywhere) ---
+.idea/
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

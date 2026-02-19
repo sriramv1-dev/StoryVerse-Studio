@@ -1,0 +1,61 @@
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.studio-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.script-output {
+  margin-top: 30px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  border: 1px solid #333;
+}
+
+pre {
+  white-space: pre-wrap; /* Keeps the text formatting */
+  color: #4ade80; /* Matrix green for the script */
+}

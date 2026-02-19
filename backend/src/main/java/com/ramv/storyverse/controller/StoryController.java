@@ -2,10 +2,11 @@ package com.ramv.storyverse.controller;
 
 import lombok.NoArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/story")
+@CrossOrigin(origins = "http://localhost:5173")
 public class StoryController {
 
     private final ChatClient chatClient;
@@ -30,6 +31,29 @@ public class StoryController {
 
         // For now, let's try the ONE model that almost always works on v1beta:
         return "Check your console logs for the error message!";
+    }
+
+    @GetMapping("/generate-scenes")
+    public String generateScenes(
+            @RequestParam(value = "story", defaultValue = "A brave bird") String storyPrompt
+    ){
+        // 1. Create the formatted prompt for the AI
+        String aiPrompt = """
+                You are a visual storyteller and director. 
+                Analyze this story idea: "%s"
+                
+                Break it down into a short script with:
+                - Scene Number
+                - Visual Description (for an artist)
+                - Camera Angle
+                
+                Keep it concise.
+                """.formatted(storyPrompt);
+
+        return chatClient.prompt()
+                .user(aiPrompt)
+                .call()
+                .content();
     }
 
 }
