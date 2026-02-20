@@ -1,8 +1,12 @@
 package com.ramv.storyverse.controller;
 
-import lombok.NoArgsConstructor;
+import com.ramv.storyverse.model.Scene;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/story")
@@ -34,7 +38,7 @@ public class StoryController {
     }
 
     @GetMapping("/generate-scenes")
-    public String generateScenes(
+    public List<Scene> generateScenes(
             @RequestParam(value = "story", defaultValue = "A brave bird") String storyPrompt
     ){
         // 1. Create the formatted prompt for the AI
@@ -53,7 +57,7 @@ public class StoryController {
         return chatClient.prompt()
                 .user(aiPrompt)
                 .call()
-                .content();
+                .entity(new ParameterizedTypeReference<List<Scene>>() {});
     }
 
 }
