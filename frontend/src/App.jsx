@@ -10,19 +10,27 @@ const fetchStory = async (prompt) => {
     throw new Error("Failed to fetch story");
   }
 
-  return response.text();
+  return response.json();
 };
 
 // The New Child Component using 'use'
 // This component automatically "suspends" (pauses) until the promise resolves
 const StoryScript = ({ storyPromise }) => {
   // The 'use' hook reads the value from the promise
-  const story = use(storyPromise);
+  const scenes = use(storyPromise);
 
   return (
-    <div className="script-output">
-      <h3>Generated Script:</h3>
-      <pre>{story}</pre>
+    <div className="scene-board">
+      <h3>Generated Story board</h3>
+      {scenes.map((scene, index) => (
+        <div key={index} className="scene-card">
+          <div className="scene-header">
+            <span className="scene-number">🎬 Scene {scene.sceneNumber}</span>
+            <span className="camera-angle">🎥 {scene.cameraAngle}</span>
+          </div>
+          <p className="visual-desc">{scene.visualDescription}</p>
+        </div>
+      ))}
     </div>
   );
 };
