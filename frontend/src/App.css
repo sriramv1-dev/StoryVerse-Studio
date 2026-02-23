@@ -99,3 +99,36 @@ pre {
   line-height: 1.6;
   color: #e5e7eb;
 }
+
+/* --- Image Prompt Styles --- */
+.image-prompt-details {
+  margin-top: 15px;
+  background: #1a1a1a;
+  border-radius: 6px;
+  padding: 10px;
+  border-left: 3px solid #a855f7; /* AI Purple */
+}
+
+.image-prompt-details summary {
+  cursor: pointer;
+  color: #a855f7;
+  font-weight: bold;
+  font-size: 0.85em;
+  user-select: none; /* Prevents blue highlighting when clicking */
+  transition: color 0.2s;
+}
+
+.image-prompt-details summary:hover {
+  color: #c084fc;
+}
+
+.prompt-text {
+  margin-top: 10px;
+  color: #9ca3af;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85em;
+  line-height: 1.4;
+  padding: 10px;
+  background: #0f0f0f;
+  border-radius: 4px;
+}

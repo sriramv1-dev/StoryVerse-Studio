@@ -46,12 +46,13 @@ public class StoryController {
                 You are a visual storyteller and director. 
                 Analyze this story idea: "%s"
                 
-                Break it down into a short script with:
-                - Scene Number
-                - Visual Description (for an artist)
-                - Camera Angle
-                
-                Keep it concise.
+                Break it down into a short script of exactly 3 to 4 distinct scenes.
+                keep it concise.
+                For each scene, provide:
+                - The scene number.
+                - A rich visual description for the storyboard.
+                - A suggested camera angle.
+                - A highly detailed 'imagePrompt' specifically written for an AI image generator (include subjects, background, lighting, and an art style like 'cinematic 3D animation' or 'vibrant watercolor').
                 """.formatted(storyPrompt);
 
         return chatClient.prompt()

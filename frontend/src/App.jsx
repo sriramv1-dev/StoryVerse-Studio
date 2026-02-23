@@ -29,6 +29,11 @@ const StoryScript = ({ storyPromise }) => {
             <span className="camera-angle">🎥 {scene.cameraAngle}</span>
           </div>
           <p className="visual-desc">{scene.visualDescription}</p>
+          {/* NEW: Collapsible Image Prompt */}
+          <details className="image-prompt-details">
+            <summary>🖼️ View Image Generation Prompt</summary>
+            <div className="prompt-text">{scene.imagePrompt}</div>
+          </details>
         </div>
       ))}
     </div>
